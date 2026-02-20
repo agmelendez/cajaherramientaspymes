@@ -100,13 +100,561 @@
                 <p>La IA propone, usted dispone. Enseñamos a mantener el criterio humano y la ética empresarial en el
                     centro de cada decisión tecnológica.</p>
             </div>
+    </section>
+
+    <!-- Nueva Sección: Ruta de Aprendizaje -->
+    <section class="learning-path" style="padding: 4rem 2rem; background-color: #f4f6f9;">
+        <div class="section-header">
+            <h3>🗺️ Ruta de Aprendizaje: Caja de Herramientas de IA</h3>
+            <p>La formación se divide en tres etapas incrementales, cada una compuesta por 4 semanas de trabajo bajo el
+                modelo <strong>70% práctico y 30% teórico</strong>.</p>
+        </div>
+
+        <div class="learning-path-container"
+            style="max-width: 1100px; margin: 0 auto; padding: 0 1rem; display: flex; flex-direction: column; align-items: center;">
+
+            <style>
+                :root {
+                    --infog-blue-light: #e3f2fd;
+                    --infog-blue-main: #5eb5e0;
+                    --infog-green-light: #e8f5e9;
+                    --infog-green-main: #8cc63f;
+                    --infog-orange-light: #fff3e0;
+                    --infog-orange-main: #fbb03b;
+                }
+
+                .infog-container {
+                    display: flex;
+                    gap: 20px;
+                    width: 100%;
+                    justify-content: center;
+                    flex-wrap: wrap;
+                    margin-bottom: 3rem;
+                }
+
+                .infog-module {
+                    flex: 1;
+                    min-width: 250px;
+                    border-radius: 10px;
+                    overflow: hidden;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 10px;
+                }
+
+                .infog-module-header {
+                    padding: 15px;
+                    text-align: center;
+                    font-weight: bold;
+                    font-size: 1.1rem;
+                    border-radius: 8px;
+                    margin-bottom: 5px;
+                }
+
+                .infog-mod-1 .infog-module-header {
+                    background-color: var(--infog-blue-main);
+                    color: white;
+                }
+
+                .infog-mod-2 .infog-module-header {
+                    background-color: var(--infog-green-main);
+                    color: white;
+                }
+
+                .infog-mod-3 .infog-module-header {
+                    background-color: var(--infog-orange-main);
+                    color: white;
+                }
+
+                .infog-card {
+                    background-color: white;
+                    border: 1px solid #ddd;
+                    border-radius: 10px;
+                    padding: 12px 15px;
+                    display: flex;
+                    align-items: center;
+                    gap: 15px;
+                    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+                    min-height: 70px;
+                }
+
+                .infog-mod-1 .infog-card {
+                    background-color: var(--infog-blue-light);
+                    border-color: #bbdefb;
+                }
+
+                .infog-mod-2 .infog-card {
+                    background-color: var(--infog-green-light);
+                    border-color: #c8e6c9;
+                }
+
+                .infog-mod-3 .infog-card {
+                    background-color: var(--infog-orange-light);
+                    border-color: #ffe0b2;
+                }
+
+                .infog-icon-circle {
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 50%;
+                    background: white;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    flex-shrink: 0;
+                    border: 2px solid rgba(0, 0, 0, 0.1);
+                    font-size: 1.2rem;
+                }
+
+                .infog-card-content {
+                    font-size: 0.9rem;
+                    line-height: 1.3;
+                    text-align: left;
+                }
+
+                .infog-card-content strong {
+                    display: block;
+                    margin-bottom: 3px;
+                }
+
+                /* Sección Inferior - Ciclo RHEC */
+                .rhec-section {
+                    margin-top: 10px;
+                    margin-bottom: 30px;
+                    text-align: center;
+                    width: 100%;
+                }
+
+                .rhec-title {
+                    font-weight: bold;
+                    font-size: 1.2rem;
+                    margin-bottom: 20px;
+                    color: var(--ucr-blue);
+                }
+
+                .rhec-container {
+                    position: relative;
+                    width: 250px;
+                    height: 250px;
+                    margin: 0 auto;
+                    border-radius: 50%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+
+                .rhec-step {
+                    position: absolute;
+                    width: 120px;
+                    height: 120px;
+                    border-radius: 50%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    padding: 8px;
+                    color: white;
+                    font-size: 0.70rem;
+                    box-sizing: border-box;
+                    text-align: center;
+                }
+
+                /* Posicionamiento del Ciclo */
+                .step-reto {
+                    background-color: #4a90e2;
+                    top: 0;
+                    left: 0;
+                    border-radius: 100% 0 0 0;
+                    align-items: flex-end;
+                    padding-right: 15px;
+                }
+
+                .step-hacer {
+                    background-color: #7cb342;
+                    top: 0;
+                    right: 0;
+                    border-radius: 0 100% 0 0;
+                    align-items: flex-start;
+                    padding-left: 15px;
+                }
+
+                .step-compartir {
+                    background-color: #5eb5e0;
+                    bottom: 0;
+                    left: 0;
+                    border-radius: 0 0 0 100%;
+                    align-items: flex-end;
+                    padding-right: 15px;
+                }
+
+                .step-entender {
+                    background-color: #f39c12;
+                    bottom: 0;
+                    right: 0;
+                    border-radius: 0 0 100% 0;
+                    align-items: flex-start;
+                    padding-left: 15px;
+                }
+
+                .rhec-center {
+                    width: 70px;
+                    height: 70px;
+                    background-color: white;
+                    border-radius: 50%;
+                    z-index: 10;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+                }
+
+                @media (max-width: 768px) {
+                    .infog-container {
+                        flex-direction: column;
+                        align-items: center;
+                    }
+
+                    .infog-module {
+                        width: 100%;
+                    }
+                }
+            </style>
+
+            <div class="infog-container">
+                <div class="infog-module infog-mod-1">
+                    <div class="infog-module-header">Módulo I: Diagnóstico con IA</div>
+                    <div class="infog-card">
+                        <div class="infog-icon-circle">⚙️</div>
+                        <div class="infog-card-content">
+                            <strong>Semana 1: Primer contacto</strong>
+                            Configuración de LLMs y seguridad.
+                        </div>
+                    </div>
+                    <div class="infog-card">
+                        <div class="infog-icon-circle">💬</div>
+                        <div class="infog-card-content">
+                            <strong>Semana 2: Prompting</strong>
+                            El arte de preguntar.
+                        </div>
+                    </div>
+                    <div class="infog-card">
+                        <div class="infog-icon-circle">🔍</div>
+                        <div class="infog-card-content">
+                            <strong>Semana 3: Diagnóstico</strong>
+                            FODA dinámico y perfil.
+                        </div>
+                    </div>
+                    <div class="infog-card">
+                        <div class="infog-icon-circle">📋</div>
+                        <div class="infog-card-content">
+                            <strong>Semana 4: Plan de Acción</strong>
+                            De los datos a la estrategia real.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="infog-module infog-mod-2">
+                    <div class="infog-module-header">Módulo II: Automatización</div>
+                    <div class="infog-card">
+                        <div class="infog-icon-circle">🔀</div>
+                        <div class="infog-card-content">
+                            <strong>Semana 5: No-Code</strong>
+                            Su primer flujo automático.
+                        </div>
+                    </div>
+                    <div class="infog-card">
+                        <div class="infog-icon-circle">🤖</div>
+                        <div class="infog-card-content">
+                            <strong>Semana 6: Chatbots</strong>
+                            Automatización de atención.
+                        </div>
+                    </div>
+                    <div class="infog-card">
+                        <div class="infog-icon-circle">🗄️</div>
+                        <div class="infog-card-content">
+                            <strong>Semana 7: Sistematización</strong>
+                            CRM básico y bases de datos.
+                        </div>
+                    </div>
+                    <div class="infog-card">
+                        <div class="infog-icon-circle">💰</div>
+                        <div class="infog-card-content">
+                            <strong>Semana 8: Integración Final</strong>
+                            Cálculo del ROI.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="infog-module infog-mod-3">
+                    <div class="infog-module-header">Módulo III: Comercialización</div>
+                    <div class="infog-card">
+                        <div class="infog-icon-circle">🎨</div>
+                        <div class="infog-card-content">
+                            <strong>Semana 9: Identidad Visual</strong>
+                            Diseño asistido por IA.
+                        </div>
+                    </div>
+                    <div class="infog-card">
+                        <div class="infog-icon-circle">🎬</div>
+                        <div class="infog-card-content">
+                            <strong>Semana 10: Producción</strong>
+                            Video, locución y avatares.
+                        </div>
+                    </div>
+                    <div class="infog-card">
+                        <div class="infog-icon-circle">💡</div>
+                        <div class="infog-card-content">
+                            <strong>Semana 11: Prefactibilidad</strong>
+                            Validación de ideas.
+                        </div>
+                    </div>
+                    <div class="infog-card">
+                        <div class="infog-icon-circle">📣</div>
+                        <div class="infog-card-content">
+                            <strong>Semana 12: Campaña</strong>
+                            Lanzamiento final (AIDA).
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="rhec-section">
+                <div class="rhec-title"><i class="fas fa-sync-alt" style="margin-right: 0.5rem;"></i> El Ciclo Semanal
+                    (Metodología RHEC)</div>
+                <div class="rhec-container">
+                    <div class="rhec-step step-reto">
+                        <strong>1. RETO (5%)</strong>
+                        <span>Desafío real</span>
+                    </div>
+                    <div class="rhec-step step-hacer">
+                        <strong>2. HACER (65%)</strong>
+                        <span>Práctica pura</span>
+                    </div>
+                    <div class="rhec-step step-compartir">
+                        <strong>4. COMPARTIR (5%)</strong>
+                        <span>Reflexión</span>
+                    </div>
+                    <div class="rhec-step step-entender">
+                        <strong>3. ENTENDER (25%)</strong>
+                        <span>Teoría aplicada</span>
+                    </div>
+                    <div class="rhec-center">
+                        <span style="font-size: 1.5rem;"><i class="fas fa-sync-alt fa-spin"
+                                style="color: var(--ucr-blue);"></i></span>
+                    </div>
+                </div>
+            </div>
+
+            <details class="interactive-path-summary"
+                style="background: white; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); overflow: hidden; width: 100%; max-width: 800px;">
+                <summary class="btn-hero"
+                    style="display: inline-flex; justify-content: center; align-items: center; gap: 0.5rem; margin: 0 auto 2rem auto; width: fit-content; cursor: pointer; list-style: none;">
+                    <i class="fas fa-plus-circle"></i> Ver detalle de los módulos y metodología
+                </summary>
+
+                <div class="path-details-content" style="padding: 2rem; text-align: left;">
+                    <div class="path-module" style="margin-bottom: 2rem;">
+                        <h4
+                            style="color: var(--ucr-blue); border-bottom: 2px solid var(--accent-yellow); padding-bottom: 0.5rem; margin-bottom: 1rem;">
+                            Módulo I: Diagnóstico con IA</h4>
+                        <p class="path-focus" style="font-size: 0.95rem; color: #555; margin-bottom: 1rem;"><em>Foco:
+                                Análisis estratégico y toma de decisiones.</em></p>
+                        <ul class="path-weeks" style="list-style-type: none; padding-left: 0;">
+                            <li style="margin-bottom: 0.8rem; padding-left: 1.5rem; position: relative;">
+                                <i class="fas fa-check-circle"
+                                    style="position: absolute; left: 0; top: 3px; color: var(--accent-yellow);"></i>
+                                <strong>Semana 1:</strong> Primer contacto, configuración de LLMs (ChatGPT, Claude,
+                                Gemini) y seguridad digital.
+                            </li>
+                            <li style="margin-bottom: 0.8rem; padding-left: 1.5rem; position: relative;">
+                                <i class="fas fa-check-circle"
+                                    style="position: absolute; left: 0; top: 3px; color: var(--accent-yellow);"></i>
+                                <strong>Semana 2:</strong> Ingeniería de Prompts: El arte de preguntar con el modelo
+                                <strong>CIFRCE</strong>.
+                            </li>
+                            <li style="margin-bottom: 0.8rem; padding-left: 1.5rem; position: relative;">
+                                <i class="fas fa-check-circle"
+                                    style="position: absolute; left: 0; top: 3px; color: var(--accent-yellow);"></i>
+                                <strong>Semana 3:</strong> Diagnóstico de Negocio: FODA dinámico, finanzas básicas y
+                                perfil de cliente.
+                            </li>
+                            <li style="margin-bottom: 0.8rem; padding-left: 1.5rem; position: relative;">
+                                <i class="fas fa-check-circle"
+                                    style="position: absolute; left: 0; top: 3px; color: var(--accent-yellow);"></i>
+                                <strong>Semana 4:</strong> Síntesis y Plan de Acción: De los datos a la estrategia real.
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="path-module" style="margin-bottom: 2rem;">
+                        <h4
+                            style="color: var(--ucr-blue); border-bottom: 2px solid var(--accent-yellow); padding-bottom: 0.5rem; margin-bottom: 1rem;">
+                            Módulo II: Automatización de Procesos</h4>
+                        <p class="path-focus" style="font-size: 0.95rem; color: #555; margin-bottom: 1rem;"><em>Foco:
+                                Eficiencia operativa y ahorro de tiempo.</em></p>
+                        <ul class="path-weeks" style="list-style-type: none; padding-left: 0;">
+                            <li style="margin-bottom: 0.8rem; padding-left: 1.5rem; position: relative;">
+                                <i class="fas fa-check-circle"
+                                    style="position: absolute; left: 0; top: 3px; color: var(--accent-yellow);"></i>
+                                <strong>Semana 5:</strong> Introducción al No-Code: Su primer flujo automático en
+                                <strong>Make</strong>.
+                            </li>
+                            <li style="margin-bottom: 0.8rem; padding-left: 1.5rem; position: relative;">
+                                <i class="fas fa-check-circle"
+                                    style="position: absolute; left: 0; top: 3px; color: var(--accent-yellow);"></i>
+                                <strong>Semana 6:</strong> Chatbots y Mensajería: Automatización de la atención al
+                                cliente.
+                            </li>
+                            <li style="margin-bottom: 0.8rem; padding-left: 1.5rem; position: relative;">
+                                <i class="fas fa-check-circle"
+                                    style="position: absolute; left: 0; top: 3px; color: var(--accent-yellow);"></i>
+                                <strong>Semana 7:</strong> Sistematización: Creación de un CRM básico y gestión de bases
+                                de datos.
+                            </li>
+                            <li style="margin-bottom: 0.8rem; padding-left: 1.5rem; position: relative;">
+                                <i class="fas fa-check-circle"
+                                    style="position: absolute; left: 0; top: 3px; color: var(--accent-yellow);"></i>
+                                <strong>Semana 8:</strong> Integración Final: Cálculo del ROI de la automatización.
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="path-module" style="margin-bottom: 2.5rem;">
+                        <h4
+                            style="color: var(--ucr-blue); border-bottom: 2px solid var(--accent-yellow); padding-bottom: 0.5rem; margin-bottom: 1rem;">
+                            Módulo III: Contenido y Comercialización</h4>
+                        <p class="path-focus" style="font-size: 0.95rem; color: #555; margin-bottom: 1rem;"><em>Foco:
+                                Visibilidad, ventas y marca digital.</em></p>
+                        <ul class="path-weeks" style="list-style-type: none; padding-left: 0;">
+                            <li style="margin-bottom: 0.8rem; padding-left: 1.5rem; position: relative;">
+                                <i class="fas fa-check-circle"
+                                    style="position: absolute; left: 0; top: 3px; color: var(--accent-yellow);"></i>
+                                <strong>Semana 9:</strong> Identidad Visual: Diseño asistido por IA con
+                                <strong>Canva</strong>.
+                            </li>
+                            <li style="margin-bottom: 0.8rem; padding-left: 1.5rem; position: relative;">
+                                <i class="fas fa-check-circle"
+                                    style="position: absolute; left: 0; top: 3px; color: var(--accent-yellow);"></i>
+                                <strong>Semana 10:</strong> Producción Audiovisual: Video, locución y avatares (CapCut,
+                                Eleven Labs).
+                            </li>
+                            <li style="margin-bottom: 0.8rem; padding-left: 1.5rem; position: relative;">
+                                <i class="fas fa-check-circle"
+                                    style="position: absolute; left: 0; top: 3px; color: var(--accent-yellow);"></i>
+                                <strong>Semana 11:</strong> Prefactibilidad: Uso de IA para validar nuevas ideas de
+                                inversión.
+                            </li>
+                            <li style="margin-bottom: 0.8rem; padding-left: 1.5rem; position: relative;">
+                                <i class="fas fa-check-circle"
+                                    style="position: absolute; left: 0; top: 3px; color: var(--accent-yellow);"></i>
+                                <strong>Semana 12:</strong> Campaña Integral: Lanzamiento final utilizando el framework
+                                AIDA.
+                            </li>
+                        </ul>
+                    </div>
+
+                    <hr style="border: 0; height: 1px; background: #eee; margin: 2rem 0;">
+
+                    <div class="path-methodology"
+                        style="background: #f8f9fa; padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--ucr-blue);">
+                        <h4 style="color: var(--ucr-blue); margin-bottom: 1rem;"><i class="fas fa-sync-alt"
+                                style="margin-right: 0.5rem;"></i> El Ciclo Semanal (Metodología RHEC)</h4>
+                        <p style="margin-bottom: 1.5rem; font-size: 0.95rem;">Cada una de las 12 semanas anteriores
+                            sigue un motor de aprendizaje de 4 pasos para asegurar que el conocimiento se aplique de
+                            inmediato:</p>
+
+                        <div
+                            style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+                            <div
+                                style="background: white; padding: 1rem; border-radius: 6px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+                                <h5 style="color: #333; margin-bottom: 0.5rem;"><span
+                                        style="color: var(--accent-yellow); font-size: 1.2rem; font-weight: bold; margin-right: 0.3rem;">1.</span>
+                                    RETO</h5>
+                                <p style="font-size: 0.85rem; color: #666; margin: 0;">Un desafío concreto vinculado a
+                                    su negocio real.</p>
+                            </div>
+                            <div
+                                style="background: white; padding: 1rem; border-radius: 6px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+                                <h5 style="color: #333; margin-bottom: 0.5rem;"><span
+                                        style="color: var(--accent-yellow); font-size: 1.2rem; font-weight: bold; margin-right: 0.3rem;">2.</span>
+                                    HACER</h5>
+                                <p style="font-size: 0.85rem; color: #666; margin: 0;">El núcleo del aprendizaje.
+                                    Video-tutoriales y ejercicios.</p>
+                            </div>
+                            <div
+                                style="background: white; padding: 1rem; border-radius: 6px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+                                <h5 style="color: #333; margin-bottom: 0.5rem;"><span
+                                        style="color: var(--accent-yellow); font-size: 1.2rem; font-weight: bold; margin-right: 0.3rem;">3.</span>
+                                    ENTENDER</h5>
+                                <p style="font-size: 0.85rem; color: #666; margin: 0;">Microvídeos teóricos de la
+                                    ciencia detrás de la herramienta.</p>
+                            </div>
+                            <div
+                                style="background: white; padding: 1rem; border-radius: 6px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+                                <h5 style="color: #333; margin-bottom: 0.5rem;"><span
+                                        style="color: var(--accent-yellow); font-size: 1.2rem; font-weight: bold; margin-right: 0.3rem;">4.</span>
+                                    COMPARTIR</h5>
+                                <p style="font-size: 0.85rem; color: #666; margin: 0;">Reflexión colectiva y
+                                    retroalimentación con empresarios.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </details>
         </div>
     </section>
+
+    <style>
+        .interactive-path-summary>summary {
+            list-style: none;
+            /* Hide default arrow */
+        }
+
+        .interactive-path-summary>summary::-webkit-details-marker {
+            display: none;
+            /* Hide arrow in WebKit */
+        }
+
+        .interactive-path-summary[open]>summary i {
+            transform: rotate(45deg);
+            transition: transform 0.3s ease;
+        }
+
+        .interactive-path-summary>summary i {
+            transition: transform 0.3s ease;
+        }
+
+        .path-details-content {
+            animation: fadeIn 0.5s ease-in-out;
+            border-top: none;
+            margin-top: 1rem;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
 
     <section id="contenidos" class="syllabus">
         <div class="section-header">
             <h3>Estructura del Programa</h3>
             <p>Tres módulos diseñados para transformar su negocio paso a paso. Haga clic para ver los detalles.</p>
+        </div>
+
+        <div style="text-align: center; margin-bottom: 2rem;">
+            <a href="https://iadocenciaed3698.my.canva.site/copia-de-aplicaci-n-interactiva-para-retos-semanales-de-ia-para-mipymes-ucr"
+                target="_blank" rel="noopener noreferrer" class="btn-hero"
+                style="display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none;">
+                <i class="fas fa-tasks"></i> Retos de la semana
+            </a>
         </div>
 
         <div class="module-container">
@@ -169,6 +717,12 @@
                             <li>Creación de Buyer Persona.</li>
                             <li>Análisis financiero básico.</li>
                         </ul>
+                        <div class="resources-links">
+                            <a href="https://youtu.be/5Y_WAYQnO3c" target="_blank" class="resource-link"><i
+                                    class="fab fa-youtube" style="color: red;"></i> La IA al Negocio</a>
+                            <a href="https://youtu.be/Hzm54zyMkTs" target="_blank" class="resource-link"><i
+                                    class="fab fa-youtube" style="color: red;"></i> Tendencias IA -IA Impact Summit-</a>
+                        </div>
                     </div>
                 </details>
 
@@ -191,10 +745,22 @@
                 </div>
 
                 <details>
-                    <summary>Semana 5: Automatización No-Code (Make)</summary>
+                    <summary>Semana 5: Automatización No-code</summary>
                     <div class="week-content">
                         <p>Conecte aplicaciones y automatice tareas sin saber programar.</p>
                         <strong>Conceptos:</strong> Triggers, Acciones y Routers.
+                        <div class="resources-links">
+                            <a href="https://youtu.be/ElsjejoXNoA" target="_blank" class="resource-link"><i
+                                    class="fab fa-youtube" style="color: red;"></i> Automatización pymes</a>
+                            <a href="https://youtu.be/ElhJ5GFQDgE" target="_blank" class="resource-link"><i
+                                    class="fab fa-youtube" style="color: red;"></i> Automatización con Make</a>
+                            <a href="https://youtu.be/xPMt25CZRTk" target="_blank" class="resource-link"><i
+                                    class="fab fa-youtube" style="color: red;"></i> Automatiza tu negocio parte 1</a>
+                            <a href="https://youtu.be/VWwglL0L0Mw" target="_blank" class="resource-link"><i
+                                    class="fab fa-youtube" style="color: red;"></i> Automatiza tu negocio parte 2</a>
+                            <a href="https://youtu.be/08jm_ojPL0U" target="_blank" class="resource-link"><i
+                                    class="fab fa-youtube" style="color: red;"></i> Automatiza con n8n</a>
+                        </div>
                     </div>
                 </details>
 
@@ -210,6 +776,10 @@
                     <summary>Semana 7: CRM y Sistematización</summary>
                     <div class="week-content">
                         <p>Organice sus clientes y seguimientos de forma automática.</p>
+                        <div class="resources-links">
+                            <a href="https://youtu.be/AjG0NghxXzQ" target="_blank" class="resource-link"><i
+                                    class="fab fa-youtube" style="color: red;"></i> Sandbox Regulatorios para Pymes</a>
+                        </div>
                     </div>
                 </details>
 
@@ -234,6 +804,10 @@
                     <summary>Semana 9: Identidad Visual y Diseño</summary>
                     <div class="week-content">
                         <p>Cree la imagen de su marca usando IA generativa de imágenes.</p>
+                        <div class="resources-links">
+                            <a href="https://youtu.be/-nmNBOtHNig" target="_blank" class="resource-link"><i
+                                    class="fab fa-youtube" style="color: red;"></i> Canva para emprendedores</a>
+                        </div>
                     </div>
                 </details>
 
