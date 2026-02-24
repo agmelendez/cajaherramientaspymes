@@ -36,3 +36,63 @@ document.querySelectorAll('.concept-card, .module-card, .res-card').forEach(el =
     el.style.transition = 'opacity 0.5s ease-out, transform 0.5s ease-out';
     observer.observe(el);
 });
+
+// Lightbox Logic for Infographics
+document.addEventListener('DOMContentLoaded', () => {
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxClose = document.getElementById('lightbox-close');
+    const lightboxDownload = document.getElementById('lightbox-download');
+    const thumbnails = document.querySelectorAll('.infographic-thumb');
+
+    if (!lightbox) return; // Exit if lightbox not in DOM
+
+    // Open lightbox
+    thumbnails.forEach(thumb => {
+        thumb.addEventListener('click', () => {
+            const imgSrc = thumb.getAttribute('src');
+            
+            // Set image source
+            lightboxImg.setAttribute('src', imgSrc);
+            
+            // Set download link attributes
+            lightboxDownload.setAttribute('href', imgSrc);
+            // Extract filename from path for the download attribute
+            const fileName = imgSrc.split('/').pop();
+            lightboxDownload.setAttribute('download', fileName);
+            
+            // Show lightbox
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Prevent background scrolling
+        });
+    });
+
+    // Close lightbox function
+    const closeLightbox = () => {
+        lightbox.classList.remove('active');
+        // Clear src after fade out to avoid ghosting
+        setTimeout(() => {
+            lightboxImg.setAttribute('src', '');
+        }, 300);
+        document.body.style.overflow = ''; // Restore scrolling
+    };
+
+    // Close on X click
+    if (lightboxClose) {
+        lightboxClose.addEventListener('click', closeLightbox);
+    }
+
+    // Close on background click
+    lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox) {
+            closeLightbox();
+        }
+    });
+
+    // Close on Escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+            closeLightbox();
+        }
+    });
+});
